@@ -4,7 +4,10 @@ using System.Text;
 
 namespace ProductListManagementSystem
 {
-    internal class Product
+    /*
+     * Class holding product info
+     */
+    public class Product
 
     {
         public int Id { get; set; }
