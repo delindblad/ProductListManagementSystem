@@ -15,16 +15,14 @@ Clone the repository:
 	git clone https://github.com/delindblad/ProductListManagementSystem.git
 
 
-Then use the run command, it should build automatically:
+In the project sub directory use "dotnet run", it should build automatically:
 
-	dotnet run "ProductListManagementSystem" -p:Configuration=Release
-
-
+		dotnet run .\ProductListManagementSystem.csproj
 
 The resulting executable will be under "\bin\Release\net10.0\".
 
 ## How to run
-Will run automatically as described abowe, or just run the executable "Product List Manager.exe". And follow the instructions.
+Will run automatically as described above, or just run the executable "ProductListManagementSystem.exe". And follow the instructions.
 
 ## Screenshots
 
