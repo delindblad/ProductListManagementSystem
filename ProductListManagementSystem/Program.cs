@@ -129,9 +129,8 @@ Product Management System
                 Console.ResetColor();
 
                 //Get product category from user input and validate
-                string? pcategory;
                 Console.Write("Enter a Category: ");
-                pcategory = Console.ReadLine();
+                string? pcategory = Console.ReadLine();
 
                 while (string.IsNullOrEmpty(pcategory))
                 {
@@ -164,9 +163,8 @@ Product Management System
                     }
                 }
                 //Get product name from user input and validate
-                string? pname;
                 Console.Write("Enter a Product Name: ");
-                pname = Console.ReadLine();
+                string? pname = Console.ReadLine();
                
                 while (string.IsNullOrEmpty(pname))
                 {
@@ -200,12 +198,11 @@ Product Management System
                 }
                 // Get product price from user input and validate
                 Decimal pprice;
-                string? ppricestr;
-                Console.Write("Enter a Product Price ");
-                ppricestr = Console.ReadLine();
-                while (string.IsNullOrEmpty(ppricestr) || !decimal.TryParse(ppricestr, out pprice))
+                Console.Write("Enter a Product Price: ");
+                string? ppricestr = Console.ReadLine();
+                while (string.IsNullOrEmpty(ppricestr) || (!decimal.TryParse(ppricestr, out pprice) && ppricestr?.ToLower() != "q"))
                 {
-                    
+                    if (!decimal.TryParse(ppricestr, out pprice))
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Error: Product price may not be empty and must be a valid decimal number");
                     Console.ResetColor();
