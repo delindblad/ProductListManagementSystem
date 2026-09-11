@@ -104,21 +104,16 @@ Product Management System
             throw new NotImplementedException();
         }
 
-        
+
         private static void ShowProductsPage()
         {
-           /* try
-            {
-                var products = 
-            }*/
+            productManager?.Show();
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nPress any key to return to the main menu...");
+            Console.ResetColor();
+            Console.ReadKey();
         }
-
-        /*
-         * AddProductPage method is responsible for adding a new product to the product manager.
-         * It prompts the user for product category, name, and price, validates the input, and adds the product.
-         * If the user enters "Q" at any point, the method will return to the main menu.
-         *
-         */
+        
         private static void AddProductPage()
         {
             while (true)
@@ -148,7 +143,7 @@ Product Management System
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("\nTo enter a new product - enter \"P\" | To search for a product - enter: \"S\" | To quit - enter: \"Q\"");
                     Console.ResetColor();
-                    var key = Console.ReadKey().KeyChar.ToString().ToLower();
+                    var key = Console.ReadKey().KeyChar.ToString().ToLower().Trim();
                     if (key == "p")
                     {
                         continue;
@@ -182,7 +177,7 @@ Product Management System
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("To enter a new product - enter \"P\" | To search for a product - enter: \"S\" | To quit - enter: \"Q\"");
                     Console.ResetColor();
-                    var key = Console.ReadKey().KeyChar.ToString().ToLower();
+                    var key = Console.ReadKey().KeyChar.ToString().ToLower().Trim();
                     if (key == "p")
                     {
                         continue;
@@ -200,7 +195,8 @@ Product Management System
                 Decimal pprice;
                 Console.Write("Enter a Product Price: ");
                 string? ppricestr = Console.ReadLine();
-                while (string.IsNullOrEmpty(ppricestr) || (!decimal.TryParse(ppricestr, out pprice) && ppricestr?.ToLower() != "q"))
+                // "q" is the only acceptable character
+                while (string.IsNullOrEmpty(ppricestr) || (!decimal.TryParse(ppricestr, out pprice) && ppricestr?.ToLower().Trim() != "q"))
                 {
                     if (!decimal.TryParse(ppricestr, out pprice))
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -215,7 +211,7 @@ Product Management System
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("To enter a new product - enter \"P\" | To search for a product - enter: \"S\" | To quit - enter: \"Q\"");
                     Console.ResetColor();
-                    var key = Console.ReadKey().KeyChar.ToString().ToLower();
+                    var key = Console.ReadKey().KeyChar.ToString().ToLower().Trim();
                     if (key == "p")
                     {
                         continue;
