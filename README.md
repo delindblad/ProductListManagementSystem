@@ -28,7 +28,7 @@ Will run automatically as described abowe, or just run the executable "Product L
 
 ## Screenshots
 
-<<img width="459" height="466" alt="image" src="https://github.com/user-attachments/assets/9c1fbb1f-1d8a-4211-93c6-0e4d5a7ad7f3" />
+<img width="459" height="466" alt="image" src="https://github.com/user-attachments/assets/9c1fbb1f-1d8a-4211-93c6-0e4d5a7ad7f3" />
 
 <img width="372" height="432" alt="image" src="https://github.com/user-attachments/assets/fc294dc2-dfaa-442c-871b-1d1cf9f7b916" />
 
