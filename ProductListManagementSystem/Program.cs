@@ -73,7 +73,7 @@ Product Management System
 
 
         }
-
+        
         private static void LoadProductsPage()
         {
             throw new NotImplementedException();
@@ -156,6 +156,10 @@ Product Management System
                     {
                         return;
                     }
+                    else
+                    {
+                        return;
+                    }
                 }
                 //Get product name from user input and validate
                 Console.Write("Enter a Product Name: ");
@@ -190,40 +194,83 @@ Product Management System
                     {
                         return;
                     }
+                    else
+                    {
+                        return;
+                    }
                 }
                 // Get product price from user input and validate
-                Decimal pprice;
+                Decimal pprice = 0;
                 Console.Write("Enter a Product Price: ");
                 string? ppricestr = Console.ReadLine();
                 // "q" is the only acceptable character
-                while (string.IsNullOrEmpty(ppricestr) || (!decimal.TryParse(ppricestr, out pprice) && ppricestr?.ToLower().Trim() != "q"))
+                while (true)
                 {
-                    if (!decimal.TryParse(ppricestr, out pprice))
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Error: Product price may not be empty and must be a valid decimal number");
-                    Console.ResetColor();
-                    Console.Write("Enter a Price: ");
-                    ppricestr = Console.ReadLine();
+                    if (string.IsNullOrEmpty(ppricestr))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Error: Product price may not be empty and must be a valid decimal number");
+                        Console.ResetColor();
+                        Thread.Sleep(1500);
+                        Console.Beep();
+                        Console.Clear();
+                        Console.Write("Enter a Price: ");
+                        ppricestr = Console.ReadLine();
+                        continue;
+                    }
+
+                    if (ppricestr.Trim().ToLower() == "q")
+                    {
+                        break;
+                    }
+
+                    if (decimal.TryParse(ppricestr, out pprice))
+                    {
+                        if (pprice < 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Error: Price cannot be negative");
+                            Console.ResetColor();
+                            Console.Beep();
+                            Thread.Sleep(1500);
+                            Console.Clear();
+                            Console.Write("Enter a Price: ");
+                            ppricestr = Console.ReadLine();
+                            continue;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
                 }
-                if (ppricestr?.ToLower() == "q")
+                if (ppricestr?.ToLower().Trim() == "q")
                 {
                     productManager?.Show();
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("To enter a new product - enter \"P\" | To search for a product - enter: \"S\" | To quit - enter: \"Q\"");
                     Console.ResetColor();
-                    var key = Console.ReadKey().KeyChar.ToString().ToLower().Trim();
-                    if (key == "p")
-                    {
-                        continue;
-                    }
-                    else if (key == "s")
-                    {
-                        SearchProductPage();
-                    }
-                    else if (key == "q")
-                    {
-                        return;
-                    }
+                    string key = Console.ReadKey().KeyChar.ToString().ToLower().Trim();
+
+                        
+                        if (key == "p")
+                        {
+                            continue;
+                        }
+                        else if (key == "s")
+                        {
+                            SearchProductPage();
+                            return;
+                        }
+                        else if (key == "q")
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            return;
+                        }
+
 
                 }
 
