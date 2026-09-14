@@ -26,9 +26,8 @@ Will run automatically as described above, or just run the executable "ProductLi
 
 ## Screenshots
 
-<img width="459" height="466" alt="image" src="https://github.com/user-attachments/assets/9c1fbb1f-1d8a-4211-93c6-0e4d5a7ad7f3" />
-
-<img width="372" height="432" alt="image" src="https://github.com/user-attachments/assets/fc294dc2-dfaa-442c-871b-1d1cf9f7b916" />
+<img width="1029" height="675" alt="image" src="https://github.com/user-attachments/assets/4a35c55e-080b-4cd5-afee-d905bbe424b8" />
+<img width="1030" height="688" alt="image" src="https://github.com/user-attachments/assets/1d76000c-1a31-4b3f-8bab-cdb27fb99ef4" />
 
 
 ## Team members
